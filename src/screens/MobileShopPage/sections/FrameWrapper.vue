@@ -1,13 +1,13 @@
 <template>
-  <div class="frame-wrapper">
+  <div class="frame-wrapper-1">
     <div class="frame-13">
       <div class="frame-14">
-        <img class="filter" alt="Filter" src="/img/filter.svg" />
+        <img class="filter" alt="Filter" src="../../../../static/img/filter.svg" />
         <div class="text-wrapper-6">Filter</div>
       </div>
       <div class="group">
         <div class="text-wrapper-7">405 Items</div>
-        <img class="line-2" alt="Line" src="/img/line-7.svg" />
+        <img class="line-2" alt="Line" src="../../../../static/img/line-7.svg" />
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style>
-.frame-wrapper {
+.frame-wrapper-1 {
   align-items: center;
   display: flex;
   gap: 150px;
@@ -30,7 +30,7 @@ export default {
   width: 330px;
 }
 
-.frame-wrapper .frame-13 {
+.frame-wrapper-1 .frame-13 {
   align-items: center;
   display: inline-flex;
   flex: 0 0 auto;
@@ -38,7 +38,7 @@ export default {
   position: relative;
 }
 
-.frame-wrapper .frame-14 {
+.frame-wrapper-1 .frame-14 {
   align-items: center;
   display: flex;
   gap: 8px;
@@ -46,13 +46,13 @@ export default {
   width: 67px;
 }
 
-.frame-wrapper .filter {
+.frame-wrapper-1 .filter {
   height: 24px;
   position: relative;
   width: 24px;
 }
 
-.frame-wrapper .text-wrapper-6 {
+.frame-wrapper-1 .text-wrapper-6 {
   color: #1b1c1e;
   font-family: var(--display-1-font-family);
   font-size: var(--display-1-font-size);
@@ -65,14 +65,14 @@ export default {
   width: 76px;
 }
 
-.frame-wrapper .group {
+.frame-wrapper-1 .group {
   height: 16px;
   margin-right: -2px;
   position: relative;
   width: 72px;
 }
 
-.frame-wrapper .text-wrapper-7 {
+.frame-wrapper-1 .text-wrapper-7 {
   color: #1b1c1e;
   font-family: var(--h6-font-family);
   font-size: var(--h6-font-size);
@@ -87,7 +87,7 @@ export default {
   width: 64px;
 }
 
-.frame-wrapper .line-2 {
+.frame-wrapper-1 .line-2 {
   height: 14px;
   left: 0;
   position: absolute;

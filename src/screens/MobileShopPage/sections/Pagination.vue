@@ -1,7 +1,7 @@
 <template>
-  <div class="pagination">
+  <div class="pagination-mob">
     <div class="icon-color-wrapper">
-      <img class="icon-color" alt="Icon color" src="/img/icon-color.svg" />
+      <img class="icon-color" alt="Icon color" src="../../../../static/img/icon-color.svg" />
     </div>
     <div class="button">
       <div class="overlap-group-3">
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="group-2">
-      <img class="icon-color-2" alt="Icon color" src="/img/icon-color-1.svg" />
+      <img class="icon-color-2" alt="Icon color" src="../../../../static/img/icon-color-1.svg" />
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style>
-.pagination {
+.pagination-mob {
   align-items: flex-end;
   display: inline-flex;
   gap: 6.5px;
@@ -40,7 +40,7 @@ export default {
   top: 1226px;
 }
 
-.pagination .icon-color-wrapper {
+.pagination-mob .icon-color-wrapper {
   border: 0.79px solid;
   border-color: var(--shapes);
   border-radius: 3.17px;
@@ -50,7 +50,7 @@ export default {
   width: 31.72px;
 }
 
-.pagination .icon-color {
+.pagination-mob .icon-color {
   height: 8px;
   left: 13px;
   position: absolute;
@@ -59,13 +59,13 @@ export default {
   width: 4px;
 }
 
-.pagination .button {
+.pagination-mob .button {
   height: 31.72px;
   position: relative;
   width: 33.72px;
 }
 
-.pagination .overlap-group-3 {
+.pagination-mob .overlap-group-3 {
   background-color: #1b1c1e;
   border-radius: 3.17px;
   height: 32px;
@@ -73,7 +73,7 @@ export default {
   width: 32px;
 }
 
-.pagination .text-wrapper-8 {
+.pagination-mob .text-wrapper-8 {
   color: var(--white);
   font-family: var(--h6-font-family);
   font-size: var(--h6-font-size);
@@ -86,7 +86,7 @@ export default {
   top: 9px;
 }
 
-.pagination .overlap-8 {
+.pagination-mob .overlap-8 {
   border: 0.79px solid;
   border-color: var(--shapes);
   border-radius: 3.17px;
@@ -95,7 +95,7 @@ export default {
   width: 32px;
 }
 
-.pagination .text-wrapper-9 {
+.pagination-mob .text-wrapper-9 {
   color: #1b1c1e;
   font-family: var(--h6-font-family);
   font-size: var(--h6-font-size);
@@ -108,7 +108,7 @@ export default {
   top: 8px;
 }
 
-.pagination .group-2 {
+.pagination-mob .group-2 {
   border: 0.79px solid;
   border-color: var(--shapes);
   border-radius: 3.17px;
@@ -117,7 +117,7 @@ export default {
   width: 31.72px;
 }
 
-.pagination .icon-color-2 {
+.pagination-mob .icon-color-2 {
   height: 8px;
   left: 13px;
   position: absolute;

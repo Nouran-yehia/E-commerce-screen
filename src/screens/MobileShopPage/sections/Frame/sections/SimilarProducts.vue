@@ -4,7 +4,7 @@
       <div class="overlap">
         <div class="fav">
           <div class="overlap-group">
-            <img class="favorite" alt="Favorite" src="/img/favorite-1.svg" />
+            <img class="favorite-3" alt="Favorite" src="../../../../../../static/img/favorite-1.svg" />
           </div>
         </div>
       </div>
@@ -17,7 +17,7 @@
       <div class="overlap-2">
         <div class="overlap-group-wrapper">
           <div class="overlap-group">
-            <img class="favorite" alt="Favorite" src="/img/favorite-2.svg" />
+            <img class="favorite-3" alt="Favorite" src="../../../../../../static/img/favorite-1.svg" />
           </div>
         </div>
         <div class="div-wrapper-2">

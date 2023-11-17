@@ -1,29 +1,29 @@
 <template>
-  <div class="div">
-    <div class="frame-9">
-      <div class="overlap-6">
-        <div class="fav-6">
-          <div class="overlap-group-2">
-            <img class="favorite-3" alt="Favorite" src="/img/favorite-7.svg" />
+  <div class="div-wrapper">
+    <div class="frame-7">
+      <div class="overlap-4">
+        <div class="fav-4">
+          <div class="img-wrapper">
+            <img class="favorite-3" alt="Favorite" src="../../../../../../static/img/favorite-1.svg" />
           </div>
         </div>
       </div>
-      <div class="frame-10">
-        <p class="subheading-4">Lorem ipsum dolor sit a..</p>
-        <div class="body-6">150$</div>
+      <div class="frame-8">
+        <p class="subheading-3">Lorem ipsum dolor sit a..</p>
+        <div class="body-5">150$</div>
       </div>
     </div>
-    <div class="frame-9">
-      <div class="overlap-7">
-        <div class="fav-6">
-          <div class="overlap-group-2">
-            <img class="favorite-3" alt="Favorite" src="/img/favorite-8.svg" />
+    <div class="frame-7">
+      <div class="overlap-5">
+        <div class="fav-5">
+          <div class="img-wrapper">
+            <img class="favorite-3" alt="Favorite" src="../../../../../../static/img/favorite-1.svg" />
           </div>
         </div>
       </div>
-      <div class="frame-10">
-        <div class="subheading-4">Black Purse</div>
-        <div class="body-6">15$</div>
+      <div class="frame-8">
+        <div class="subheading-3">Black Purse</div>
+        <div class="body-5">15$</div>
       </div>
     </div>
   </div>
@@ -31,12 +31,12 @@
 
 <script>
 export default {
-  name: "Div",
+  name: "DivWrapper",
 };
 </script>
 
 <style>
-.div {
+.div-wrapper {
   align-items: flex-start;
   display: inline-flex;
   flex: 0 0 auto;
@@ -44,32 +44,32 @@ export default {
   position: relative;
 }
 
-.div .frame-9 {
+.div-wrapper .frame-7 {
   height: 243.99px;
   position: relative;
   width: 158px;
 }
 
-.div .overlap-6 {
-  background-image: url(../../../../../../static/img/mask-group-6.png);
+.div-wrapper .overlap-4 {
+  background-image: url(../../../../../../static/img/mask-group-4.png);
   background-size: 100% 100%;
   height: 188px;
-  left: -1px;
+  left: 0;
   position: absolute;
-  top: 0;
+  top: 1px;
   width: 157px;
 }
 
-.div .fav-6 {
+.div-wrapper .fav-4 {
   height: 24px;
-  left: 128px;
+  left: 127px;
   overflow: hidden;
   position: relative;
-  top: 9px;
+  top: 8px;
   width: 24px;
 }
 
-.div .overlap-group-2 {
+.div-wrapper .img-wrapper {
   background-color: #ffffff;
   border-radius: 40px;
   height: 24px;
@@ -78,7 +78,7 @@ export default {
   width: 23px;
 }
 
-.div .favorite-3 {
+.div-wrapper .favorite-2 {
   height: 13px;
   left: 4px;
   position: absolute;
@@ -86,7 +86,7 @@ export default {
   width: 15px;
 }
 
-.div .frame-10 {
+.div-wrapper .frame-8 {
   align-items: flex-start;
   display: inline-flex;
   flex-direction: column;
@@ -96,7 +96,7 @@ export default {
   top: 199px;
 }
 
-.div .subheading-4 {
+.div-wrapper .subheading-3 {
   color: var(--text-color);
   font-family: "Lato", Helvetica;
   font-size: 12px;
@@ -108,7 +108,7 @@ export default {
   width: 158px;
 }
 
-.div .body-6 {
+.div-wrapper .body-5 {
   color: var(--text-color);
   font-family: "Lato", Helvetica;
   font-size: 12px;
@@ -119,13 +119,22 @@ export default {
   width: 28px;
 }
 
-.div .overlap-7 {
-  background-image: url(../../../../../../static/img/mask-group-7.png);
+.div-wrapper .overlap-5 {
+  background-image: url(../../../../../../static/img/mask-group-5.png);
   background-size: 100% 100%;
   height: 188px;
-  left: -1px;
+  left: 0;
   position: absolute;
   top: 0;
   width: 157px;
+}
+
+.div-wrapper .fav-5 {
+  height: 24px;
+  left: 127px;
+  overflow: hidden;
+  position: relative;
+  top: 9px;
+  width: 24px;
 }
 </style>

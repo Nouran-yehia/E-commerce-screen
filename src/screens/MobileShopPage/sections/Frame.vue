@@ -1,5 +1,5 @@
 <template>
-  <div class="frame">
+  <div class="frame-mob">
     <SimilarProducts />
     <SimilarProductsWrapper />
     <DivWrapper />
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style>
-.frame {
+.frame-mob {
   align-items: flex-start;
   display: inline-flex;
   flex-direction: column;

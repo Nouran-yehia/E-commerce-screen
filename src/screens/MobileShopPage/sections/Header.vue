@@ -2,14 +2,14 @@
   <header class="header">
     <div class="text-wrapper-5">LOGO</div>
     <div class="frame-11">
-      <img class="vector" alt="Vector" src="/img/vector-4.svg" />
+      <img class="vector" alt="Vector" src="../../../../static/img/vector-4.svg" />
       <div class="ellipse" />
       <div class="ellipse-2" />
     </div>
-    <img class="favorite-4" alt="Favorite" src="/img/favorite.svg" />
-    <img class="icon" alt="Icon" src="/img/icon.svg" />
-    <img class="frame-12" alt="Frame" src="/img/frame-33566.svg" />
-    <img class="line" alt="Line" src="/img/line.svg" />
+    <img class="favorite-4" alt="Favorite" src="../../../../static/img/favorite.svg" />
+    <img class="icon" alt="Icon" src="../../../../static/img/icon.svg" />
+    <img class="frame-12" alt="Frame" src="../../../../static/img/frame-33566.svg" />
+    <img class="line" alt="Line" src="../../../../static/img/line.svg" />
   </header>
 </template>
 
