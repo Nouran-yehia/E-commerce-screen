@@ -1,81 +1,48 @@
 <template>
-  <div class="product-list">
-    <div class="frame-2">
-      <div class="overlap-group">
-        <div class="fav">
-          <div class="favorite-wrapper">
-            <img class="favorite" alt="Favorite" src="../../../../../../static/img/favorite-31.svg" />
+  <div>
+    <div class="product-list-wrapper">
+      <div class="frame-6" v-for="field in products.data" :key="field.key">
+        <img :src="field.default_variant.image" class="product-img" v-if="field.default_variant.image"/>
+        <img src="../../../../../../static/img/7387030e5a5600726e5309496353969a_t.jpeg" class="product-img" v-else/>
+        <div class="overlap-4">
+          <div class="fav-3">
+            <div class="img-wrapper">
+              <img class="favorite-2" alt="Favorite" src="../../../../../../static/img/favorite-27.svg" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="frame-3">
-        <div class="frame-4">
-          <p class="subheading">Lorem ipsum dolor siut oema..</p>
-          <div class="body">150$</div>
-        </div>
-      </div>
-    </div>
-    <div class="frame-2">
-      <div class="overlap-2">
-        <div class="overlap-group-wrapper">
-          <div class="favorite-wrapper">
-            <img class="favorite" alt="Favorite" src="../../../../../../static/img/favorite-30.svg" />
-          </div>
-        </div>
-        <div class="div-wrapper-2">
-          <div class="text-wrapper">-40 %</div>
-        </div>
-      </div>
-      <div class="frame-3">
-        <div class="frame-4">
-          <div class="subheading">Black Purse</div>
-          <div class="frame-5">
-            <div class="body-2">100$</div>
-            <div class="body-3">150$</div>
+        <div class="frame-7">
+          <div class="frame-8">
+            <p class="subheading-2">{{ field.default_variant.title }}</p>
+            <div class="body-4">{{ field.default_variant.price }}</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="frame-2">
-      <div class="fav-wrapper">
-        <div class="fav-2">
-          <div class="favorite-wrapper">
-            <img class="favorite" alt="Favorite" src="../../../../../../static/img/favorite-29.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="frame-3">
-        <div class="frame-4">
-          <p class="subheading">Lorem ipsum dolor sit a..</p>
-          <div class="body">25$</div>
-        </div>
-      </div>
-    </div>
-    <div class="frame-2">
-      <div class="overlap-3">
-        <div class="fav-2">
-          <div class="favorite-wrapper">
-            <img class="favorite" alt="Favorite" src="../../../../../../static/img/favorite-28.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="frame-3">
-        <div class="frame-4">
-          <div class="subheading">Lorem ipsum dolor.</div>
-          <div class="body">25$</div>
-        </div>
-      </div>
-    </div>
+    <Pagination v-if="products.data" :pagination="products.pagination"/>
   </div>
 </template>
-
 <script>
+import Pagination from "../../Pagination.vue";
 export default {
   name: "ProductList",
+  components: {
+    Pagination
+  },
+  props: {
+    products: {
+      type: Object,
+      default: {}
+    }
+  },
 };
 </script>
 
 <style>
+.product-img{
+  width:100%;
+  height: 75%;
+}
 .product-list {
   align-items: flex-start;
   display: inline-flex;
@@ -91,7 +58,6 @@ export default {
 }
 
 .product-list .overlap-group {
-  background-image: url(../../../../../../static/img/mask-group-31.png);
   background-size: 100% 100%;
   height: 296px;
   left: -1px;
@@ -171,7 +137,6 @@ export default {
 }
 
 .product-list .overlap-2 {
-  background-image: url(../../../../../../static/img/mask-group-30.png);
   background-size: 100% 100%;
   height: 296px;
   left: 0;
@@ -268,7 +233,6 @@ export default {
 }
 
 .product-list .overlap-3 {
-  background-image: url(../../../../../../static/img/mask-group-28.png);
   background-size: 100% 100%;
   height: 296px;
   left: 0;

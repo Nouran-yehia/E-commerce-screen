@@ -10,54 +10,33 @@
       src="../../../../../../static/img/search-icon-1.svg"
       />      <div class="text-wrapper-9">Search by brand</div>
     </div>
-    <div class="frame-28">
-      <div class="group-3">
-        <div class="rectangle-5" />
-        <div class="rectangle-6" />
-        <div class="rectangle-7" />
-        <div class="frame-29">
-          <div class="check-wrapper">
-            <img class="check" alt="Check" src="../../../../../../static/img/check.svg" />
-          </div>
-          <div class="text-wrapper-10">adidas (110)</div>
-        </div>
-        <div class="frame-30">
-          <div class="rectangle-8" />
-          <div class="text-wrapper-10">Calvin Klein (100)</div>
-        </div>
-        <div class="frame-31">
-          <div class="rectangle-8" />
-          <div class="text-wrapper-10">Tommy Hilfiger (10)</div>
-        </div>
-        <div class="frame-32">
-          <div class="rectangle-8" />
-          <div class="text-wrapper-10">Michael Kors (89</div>
-        </div>
-        <div class="frame-33">
-          <div class="rectangle-8" />
-          <div class="text-wrapper-10">Puma (176)</div>
-        </div>
-        <div class="frame-34">
-          <div class="rectangle-8" />
-          <div class="text-wrapper-10">Brand name (14)</div>
-        </div>
-        <div class="frame-35">
-          <div class="rectangle-8" />
-          <div class="text-wrapper-10">adidas (310)</div>
-        </div>
-        <div class="text-wrapper-11">Lacoste (3)</div>
-        <div class="text-wrapper-12">Nike (13)</div>
-        <div class="text-wrapper-13">Levi’s (3)</div>
+    <div class="group-2">
+      <div class="div-3" v-for="field in brands.data" :key="field.key">
+        <input type="checkbox" class="rectangle-4" :id="field"
+       @click="selected = field"
+       :checked="selected === field" />
+        <div class="text-wrapper-4">{{ field.title }}</div>
       </div>
-      <div class="text-wrapper-14">See 24 more brands</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "FrameWrapper"
+  name: "FrameWrapper",
+  props: {
+    brands: {
+      type: Object,
+      default: {}
+    }
+  },
+  data(){
+    return {
+      selected: null
+    }
+  }
 };
+
 </script>
 
 <style>
@@ -69,7 +48,21 @@ export default {
   gap: 16px;
   position: relative;
 }
-
+.rectangle-4 {
+  border: 0.5px solid;
+  border-color: #000000;
+  height: 18px;
+  position: relative;
+  width: 18px;
+}
+.div-3{
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+  justify-content: center;
+  left: 0;
+  margin-top: 10px;
+}
 .frame-wrapper .frame-27 {
   align-items: center;
   display: flex;

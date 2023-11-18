@@ -1,9 +1,9 @@
 import Vue from "vue";
-import ShopPageFullView from "./screens/ShopPageFullView.vue";
+import ShopPageView from "./screens/ShopPageView.vue";
 Vue.config.productionTip = false;
 
 new Vue({
   render: h => h(
-    ShopPageFullView
+    ShopPageView
     )
 }).$mount("#app");

@@ -3,9 +3,8 @@
         <div class="div-3">
             <Breadcrumb />
             <Header />
-            <Frame />
-            <FrameWrapper />
-            <MobilePagination />
+            <Frame :products="products" />
+            <FrameWrapper :products="products" />
         </div>
     </div>
 </template>
@@ -14,7 +13,6 @@ import Breadcrumb from "./Breadcrumb.vue";
 import Frame from "./Frame.vue";
 import FrameWrapper from "./FrameWrapper.vue";
 import Header from "./Header.vue";
-import MobilePagination from "./Pagination.vue";
 
 export default {
     name: "MainMobile",
@@ -22,8 +20,12 @@ export default {
         Breadcrumb,
         Frame,
         FrameWrapper,
-        Header,
-        MobilePagination
-    }
+        Header    },
+    props: {
+        products: {
+            type: Object,
+            default: {}
+        }
+    },
 };
 </script>

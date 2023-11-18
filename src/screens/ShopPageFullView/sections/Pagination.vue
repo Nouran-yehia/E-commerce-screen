@@ -3,19 +3,12 @@
     <div class="icon-color-wrapper">
       <img class="icon-color" alt="Icon color" src="../../../../static/img/icon-color-1.svg" />
     </div>
-    <button class="button">
-      <div class="overlap-group-9">
-        <div class="text-wrapper-24">1</div>
+    <button class="button" v-for="index in pagination.last_page">
+      <div class="overlap-group-9" v-if = "pagination.current_page == index" >
+        <div class="text-wrapper-24">{{ index }}</div>
       </div>
-    </button>
-    <button class="button">
-      <div class="div-10">
-        <div class="text-wrapper-25">2</div>
-      </div>
-    </button>
-    <button class="button">
-      <div class="div-10">
-        <div class="text-wrapper-25">3</div>
+      <div class="div-10" v-else >
+        <div class="text-wrapper-25">{{ index }}</div>
       </div>
     </button>
     <div class="div-10">
@@ -27,6 +20,12 @@
 <script>
 export default {
   name: "Pagination",
+  props: {
+    pagination : {
+      type: Object,
+      default: {}
+    }
+  }
 };
 </script>
 
@@ -35,9 +34,10 @@ export default {
   align-items: flex-end;
   display: inline-flex;
   gap: 8px;
-  left: 604px;
+  left: calc(55% - 288px);
   position: absolute;
-  top: 3624px;
+  margin: auto;
+  margin-top: 40px;
 }
 
 .pagination .icon-color-wrapper {

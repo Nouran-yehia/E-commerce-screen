@@ -1,46 +1,40 @@
 <template>
-  <div class="similar-products">
-    <div class="frame-2">
-      <div class="overlap">
-        <div class="fav">
-          <div class="overlap-group">
-            <img class="favorite-3" alt="Favorite" src="../../../../../../static/img/favorite-1.svg" />
+  <div>
+    <div class="similar-products">
+      <div class="frame-2" v-for="field in products.data">
+        <img :src="field.default_variant.image" class="product-img" v-if="field.default_variant.image" />
+        <img src="../../../../../../static/img/7387030e5a5600726e5309496353969a_t.jpeg" class="product-img" v-else />
+        <div class="overlap">
+          <div class="fav">
+            <div class="overlap-group">
+              <img class="favorite-3" alt="Favorite" src="../../../../../../static/img/favorite-1.svg" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="frame-3">
-        <p class="subheading">Lorem ipsum dolor sit a..</p>
-        <div class="body">150$</div>
-      </div>
-    </div>
-    <div class="frame-2">
-      <div class="overlap-2">
-        <div class="overlap-group-wrapper">
-          <div class="overlap-group">
-            <img class="favorite-3" alt="Favorite" src="../../../../../../static/img/favorite-1.svg" />
-          </div>
-        </div>
-        <div class="div-wrapper-2">
-          <div class="text-wrapper">-79 %</div>
-        </div>
-      </div>
-      <div class="frame-3">
-        <div class="subheading">Black Purse</div>
-        <div class="frame-4">
-          <div class="body-2">15$</div>
-          <div class="body-3">15$</div>
+        <div class="frame-3">
+          <p class="subheading">{{ field.title }}</p>
+          <div class="body">{{ field.default_variant.price }}</div>
         </div>
       </div>
     </div>
+    <MobilePagination :pagination="products.pagination"/>
   </div>
 </template>
-
 <script>
+import MobilePagination from "../../Pagination.vue";
 export default {
   name: "SimilarProducts",
+  components: {
+    MobilePagination
+  },
+  props: {
+    products: {
+      type: Object,
+      default: {}
+    }
+  },
 };
 </script>
-
 <style>
 .similar-products {
   align-items: flex-start;
@@ -48,6 +42,7 @@ export default {
   flex: 0 0 auto;
   gap: 10px;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .similar-products .frame-2 {
@@ -57,7 +52,6 @@ export default {
 }
 
 .similar-products .overlap {
-  background-image: url(../../../../../../static/img/mask-group.png);
   background-size: 100% 100%;
   height: 188px;
   left: 0;
@@ -126,7 +120,6 @@ export default {
 }
 
 .similar-products .overlap-2 {
-  background-image: url(../../../../../../static/img/mask-group-1.png);
   background-size: 100% 100%;
   height: 188px;
   left: 0;

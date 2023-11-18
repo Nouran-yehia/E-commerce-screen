@@ -6,19 +6,23 @@
         <div class="text-wrapper-6">Filter</div>
       </div>
       <div class="group">
-        <div class="text-wrapper-7">405 Items</div>
         <img class="line-2" alt="Line" src="../../../../static/img/line-7.svg" />
+        <div class="text-wrapper-7" v-if="products.pagination">{{ products.pagination.total }} Items</div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "FrameWrapper",
+  props: {
+    products: {
+      type: Object,
+      default: {}
+    }
+  },
 };
 </script>
-
 <style>
 .frame-wrapper-1 {
   align-items: center;

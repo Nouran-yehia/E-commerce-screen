@@ -72,7 +72,7 @@ export default {
   left: 0;
   position: absolute;
   top: 0;
-  width: 1440px;
+  width: 100%;
 }
 
 .group .navbar-wrapper {
@@ -81,16 +81,15 @@ export default {
   left: 0;
   position: absolute;
   top: 70px;
-  width: 1440px;
+  width: 100%;
 }
 
 .group .navbar {
-  align-items: center;
-  display: inline-flex;
   gap: 40px;
   justify-content: center;
-  left: 152px;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   top: 14px;
 }
 
@@ -105,6 +104,7 @@ export default {
   margin-top: -1px;
   position: relative;
   width: fit-content;
+  margin-left: 20px;
 }
 
 .group .header {
@@ -113,7 +113,7 @@ export default {
   left: 0;
   position: absolute;
   top: 0;
-  width: 1440px;
+  width: 100%;
 }
 
 .group .text-wrapper-16 {
@@ -134,7 +134,7 @@ export default {
   align-items: flex-start;
   display: inline-flex;
   gap: 22px;
-  left: 1134px;
+  right: 1%;
   position: absolute;
   top: 23px;
 }
@@ -200,7 +200,7 @@ export default {
   left: 0;
   position: absolute;
   top: 115px;
-  width: 1440px;
+  width: 100%;
 }
 
 .group .breadcrumb-2 {
@@ -277,6 +277,6 @@ export default {
   left: 2px;
   position: absolute;
   top: 0;
-  width: 1436px;
+  width: 100%;
 }
 </style>

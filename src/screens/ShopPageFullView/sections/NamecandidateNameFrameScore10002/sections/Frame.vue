@@ -5,47 +5,16 @@
       <img class="plus" alt="Plus" src="../../../../../../static/img/plus-1.svg" />
     </div>
     <div class="search-box">
-      <img
-      class="search-icon-instance"
-      src="../../../../../../static/img/search-icon-1.svg"
-      />
+      <img class="search-icon-instance" src="../../../../../../static/img/search-icon-1.svg" />
       <div class="text-wrapper-3">Search by category</div>
     </div>
     <div class="group-2">
-      <div class="rectangle" />
-      <div class="rectangle-2" />
-      <div class="rectangle-3" />
-      <div class="div-3">
-        <div class="rectangle-4" />
-        <div class="text-wrapper-4">shirt (110)</div>
+      <div class="div-3" v-for="field in categories.data" :key="field.key">
+        <input type="checkbox" class="rectangle-4" :id="field"
+       @click="selected = field"
+       :checked="selected === field" />
+        <div class="text-wrapper-4">{{ field.title }}</div>
       </div>
-      <div class="div-4">
-        <div class="rectangle-4" />
-        <div class="text-wrapper-4">Coats (100)</div>
-      </div>
-      <div class="div-5">
-        <div class="rectangle-4" />
-        <div class="text-wrapper-4">Accessories (10)</div>
-      </div>
-      <div class="div-6">
-        <div class="rectangle-4" />
-        <div class="text-wrapper-4">Hoodie (89</div>
-      </div>
-      <div class="div-7">
-        <div class="rectangle-4" />
-        <div class="text-wrapper-4">Dresses (176</div>
-      </div>
-      <div class="div-8">
-        <div class="rectangle-4" />
-        <div class="text-wrapper-4">Jeans (14)</div>
-      </div>
-      <div class="div-9">
-        <div class="rectangle-4" />
-        <div class="text-wrapper-4">Jumpsuits (310)</div>
-      </div>
-      <div class="text-wrapper-5">jacket (3)</div>
-      <div class="text-wrapper-6">pants (13)</div>
-      <div class="text-wrapper-7">sweatshirt (3)</div>
     </div>
   </div>
 </template>
@@ -54,6 +23,17 @@
 
 export default {
   name: "Frame",
+  props: {
+    categories: {
+      type: Object,
+      default: {}
+    }
+  },
+  data(){
+    return {
+      selected: null
+    }
+  }
 };
 </script>
 
@@ -173,11 +153,10 @@ export default {
 .frame .div-3 {
   align-items: center;
   display: inline-flex;
-  gap: 8px;
+  gap: 6px;
   justify-content: center;
   left: 0;
-  position: absolute;
-  top: 0;
+  margin-top: 10px;
 }
 
 .frame .rectangle-4 {

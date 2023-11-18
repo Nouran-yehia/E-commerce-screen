@@ -1,33 +1,44 @@
 <template>
-    <div class="shop-page-full-view">
-        <div class="div-11">
-            <Group />
-            <Overlap />
-            <div class="text-wrapper-26">Dining Room Tables</div>
-            <NamecandidateNameFrameScore10001 />
-            <OverlapWrapper />
-            <NamecandidateNameFrameScore10002 />
-            <Pagination />
-        </div>
+  <div class="shop-page-full-view">
+    <div class="div-11">
+      <Group />
+      <Overlap v-if="products.pagination" :total="products.pagination.total"/>
+      <div class="text-wrapper-26">Dining Room Tables</div>
+      <ProductListing :products="products" />
+      <OverlapWrapper />
+      <SideSection :categories="categories" :brands="brands"/>
     </div>
+  </div>
 </template>
 <script>
 import Group from "./Group.vue";
-import NamecandidateNameFrameScore10001 from "./NamecandidateNameFrameScore10001.vue";
-import NamecandidateNameFrameScore10002 from "./NamecandidateNameFrameScore10002.vue";
+import ProductListing from "./ProductListing.vue";
+import SideSection from "./SideSection.vue";
 import Overlap from "./Overlap.vue";
 import OverlapWrapper from "./OverlapWrapper.vue";
-import Pagination from "./Pagination.vue";
 export default {
   name: "MainFullPage",
   components: {
     Group,
-    NamecandidateNameFrameScore10001,
-    NamecandidateNameFrameScore10002,
+    ProductListing,
+    SideSection,
     Overlap,
     OverlapWrapper,
-    Pagination
-  }
+  },
+  props: {
+    products : {
+      type: Object,
+      default: {}
+    },
+    categories : {
+      type: Object,
+      default: {}
+    },
+    brands : {
+      type: Object,
+      default: {}
+    }
+  },
 };
 </script>
 <style>
@@ -36,14 +47,13 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: 99%;
 }
 
 .shop-page-full-view .div-11 {
   background-color: #ffffff;
-  height: 3747px;
   position: relative;
-  width: 1440px;
+  width: 100%;
 }
 
 .shop-page-full-view .text-wrapper-26 {

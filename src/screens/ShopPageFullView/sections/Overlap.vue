@@ -5,57 +5,47 @@
         <div class="title">XS</div>
         <img class="icon-close" alt="Icon close" src="../../../../static/img/icon-close-6.svg" />
       </div>
-      <div class="frame-39">
-        <div class="title">0 - 2400 EGP</div>
-        <img class="icon-close" alt="Icon close" src="../../../../static/img/icon-close-5.svg" />
-      </div>
-      <div class="frame-39">
-        <div class="title">Adidas</div>
-        <img class="icon-close" alt="Icon close" src="../../../../static/img/icon-close-2.svg" />
-      </div>
-      <div class="frame-39">
-        <div class="ellipse-3" />
-        <div class="text-wrapper-21">yellow</div>
-        <img class="icon-close" alt="Icon close" src="../../../../static/img/icon-close-2.svg" />
-      </div>
-      <div class="frame-39">
-        <div class="title">H&amp;M</div>
-        <img class="icon-close" alt="Icon close" src="../../../../static/img/icon-close-2.svg" />
-      </div>
-      <div class="frame-39">
-        <div class="ellipse-4" />
-        <div class="text-wrapper-21">Blue</div>
-        <img class="icon-close" alt="Icon close" src="../../../../static/img/icon-close.svg" />
-      </div>
-      <div class="frame-39">
-        <div class="title">Adidas</div>
-        <img class="icon-close" alt="Icon close" src="../../../../static/img/icon-close.svg" />
-      </div>
     </div>
     <div class="rectangle-9" />
-    <div class="text-wrapper-22">405 Items</div>
-    <img class="line-2" alt="Line" src="../../../../static/img/line-7.svg" />
+    <div class="items-number">
+      <img class="line-2" alt="Line" src="../../../../static/img/line-7.svg" />
+      <div class="text-wrapper-22">{{ total }} Items</div>
+    </div>
+
   </div>
 </template>
 
 <script>
 export default {
   name: "Overlap",
+  props: {
+    total : {
+      type: Number,
+      default: {}
+    }
+  },
 };
 </script>
 
 <style>
+.items-number {
+  display: flex;
+  margin-left: auto
+}
+
 .overlap {
   height: 32px;
   left: 492px;
   position: absolute;
   top: 239px;
-  width: 725px;
+  width: calc(88% - 492px);
+  display: flex;
+  min-width: 135px;
 }
 
 .overlap .frame-38 {
   align-items: flex-start;
-  display: inline-flex;
+  display: flex;
   gap: 5px;
   left: 0;
   position: absolute;
@@ -126,8 +116,7 @@ export default {
 .overlap .rectangle-9 {
   background-color: #ffffff;
   height: 32px;
-  left: 646px;
-  position: absolute;
+  left: 69px;
   top: 0;
   width: 79px;
 }
@@ -138,10 +127,9 @@ export default {
   font-size: var(--display-2-font-size);
   font-style: var(--display-2-font-style);
   font-weight: var(--display-2-font-weight);
-  left: 654px;
   letter-spacing: var(--display-2-letter-spacing);
   line-height: var(--display-2-line-height);
-  position: absolute;
+  position: relative;
   text-align: right;
   top: 7px;
   width: 63px;
@@ -149,9 +137,9 @@ export default {
 
 .overlap .line-2 {
   height: 32px;
-  left: 646px;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 1px;
+  margin-right: 7px;
 }
 </style>

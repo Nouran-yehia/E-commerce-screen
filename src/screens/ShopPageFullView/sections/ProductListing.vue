@@ -1,81 +1,41 @@
 <template>
-  <div class="product-list-wrapper">
-    <div class="frame-6">
-      <div class="overlap-4">
-        <div class="fav-3">
-          <div class="img-wrapper">
-            <img class="favorite-2" alt="Favorite" src="../../../../../../static/img/favorite-27.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="frame-7">
-        <div class="frame-8">
-          <p class="subheading-2">Lorem ipsum dolor siut oema..</p>
-          <div class="body-4">25$</div>
-        </div>
-      </div>
-    </div>
-    <div class="frame-6">
-      <div class="overlap-5">
-        <div class="fav-4">
-          <div class="img-wrapper">
-            <img class="favorite-2" alt="Favorite" src="../../../../../../static/img/favorite-26.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="frame-7">
-        <div class="frame-8">
-          <p class="subheading-2">Lorem ipsum dolor siut oema..</p>
-          <div class="body-4">150$</div>
-        </div>
-      </div>
-    </div>
-    <div class="frame-6">
-      <div class="overlap-6">
-        <div class="fav-5">
-          <div class="img-wrapper">
-            <img class="favorite-2" alt="Favorite" src="../../../../../../static/img/favorite-25.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="frame-7">
-        <div class="frame-8">
-          <div class="subheading-2">Black Purse</div>
-          <div class="body-4">15$</div>
-        </div>
-      </div>
-    </div>
-    <div class="frame-6">
-      <div class="overlap-7">
-        <div class="fav-3">
-          <div class="img-wrapper">
-            <img class="favorite-2" alt="Favorite" src="../../../../../../static/img/favorite-24.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="frame-7">
-        <div class="frame-8">
-          <p class="subheading-2">Lorem ipsum dolor sit a..</p>
-          <div class="body-4">25$</div>
-        </div>
-      </div>
-    </div>
+  <div class="namecandidate-name-frame-score-1000-1">
+    <ProductList :products="products"/>
   </div>
 </template>
-
 <script>
+import ProductList from "./NamecandidateNameFrameScore10001/sections/ProductList.vue";
 export default {
-  name: "ProductListWrapper",
+  name: "ProductListing",
+  components: {
+    ProductList
+  },
+  props: {
+    products : {
+      type: Object,
+      default: {}
+    }
+  }
 };
 </script>
-
 <style>
-.product-list-wrapper {
+.namecandidate-name-frame-score-1000-1 {
   align-items: flex-start;
   display: inline-flex;
-  flex: 0 0 auto;
-  gap: 24px;
-  position: relative;
+  flex-direction: column;
+  gap: 30px;
+  left: 321px;
+  position: absolute;
+  top: 285px;
+}
+.product-list-wrapper {
+  align-items: flex-start;
+    display: flex;
+    gap: 24px;
+    position: relative;
+    width: 96%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .product-list-wrapper .frame-6 {
@@ -85,7 +45,6 @@ export default {
 }
 
 .product-list-wrapper .overlap-4 {
-  background-image: url(../../../../../../static/img/mask-group-27.png);
   background-size: 100% 100%;
   height: 296px;
   left: -1px;
@@ -165,7 +124,6 @@ export default {
 }
 
 .product-list-wrapper .overlap-5 {
-  background-image: url(../../../../../../static/img/mask-group-26.png);
   background-size: 100% 100%;
   height: 296px;
   left: -1px;
@@ -184,7 +142,6 @@ export default {
 }
 
 .product-list-wrapper .overlap-6 {
-  background-image: url(../../../../../../static/img/mask-group-25.png);
   background-size: 100% 100%;
   height: 296px;
   left: 0;
@@ -203,7 +160,6 @@ export default {
 }
 
 .product-list-wrapper .overlap-7 {
-  background-image: url(../../../../../../static/img/mask-group-24.png);
   background-size: 100% 100%;
   height: 296px;
   left: -1px;
