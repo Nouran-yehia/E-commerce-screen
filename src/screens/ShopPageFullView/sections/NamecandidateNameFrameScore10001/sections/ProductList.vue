@@ -7,7 +7,7 @@
         <div class="overlap-4">
           <div class="fav-3">
             <div class="img-wrapper">
-              <img class="favorite-2" alt="Favorite" src="../../../../../../static/img/favorite-27.svg" />
+              <img class="favorite-2" alt="Favorite" src="../../../../../../static/img/favorite.svg" />
             </div>
           </div>
         </div>
@@ -221,7 +221,6 @@ export default {
 }
 
 .product-list .fav-wrapper {
-  background-image: url(../../../../../../static/img/mask-group-29.png);
   background-size: 100% 100%;
   height: 296px;
   left: -1px;

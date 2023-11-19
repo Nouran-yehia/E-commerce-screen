@@ -24,7 +24,7 @@
           <div class="text-wrapper-17">Account</div>
         </div>
         <div class="frame-37">
-          <img class="img-2" alt="Favorite" src="../../../../static/img/favorite-32.svg" />
+          <img class="img-2" alt="Favorite" src="../../../../static/img/favorite.svg" />
           <div class="text-wrapper-17">Wishlist</div>
         </div>
         <div class="frame-37">
