@@ -1,6 +1,6 @@
 <template>
-  <MainFullScreen v-if="!isMobile" :products='this.products' :categories='this.categories' :brands='this.brands' :filter="filter"/>
-  <MainMobile v-else :products='this.products' :categories='this.categories' :brands='this.brands' />
+  <MainFullScreen v-if="!isMobile" :products='this.products' :categories='this.categories' :brands='this.brands' :filter="filter" :getProducts="this.getProducts" :searchForField="searchForField"/>
+  <MainMobile v-else :products='this.products' :categories='this.categories' :brands='this.brands' :filter="filter" :getProducts="this.getProducts" :searchForField="searchForField"/>
 </template>
 <script>
 import MainFullScreen from "./ShopPageFullView/sections/MainFullPage.vue";
@@ -19,6 +19,8 @@ export default {
       categories: {},
       products: {},
       brands: {},
+      allBrands:{},
+      allCategories:{},
       filter:[]
     };
   },
@@ -33,9 +35,9 @@ export default {
     onResize() {
       this.isMobile = window.innerWidth < 650;
     },
-    getProducts(filter_attr, id, name) {
+    getProducts(filter_attr, id, name, page) {
+      this.filter= [];
       if(filter_attr){
-        this.filter = this.filter.filter(x=>x.attr !== filter_attr);
         this.filter.push({
           attr: filter_attr,
           id,
@@ -43,16 +45,23 @@ export default {
         })
       }
       data.getData("api/v1/products", filter_attr === 'category' ? {
-        "filter[categories]": id
-      } : filter_attr === 'brands' ? {
-        "filter[brands]": id
-      } : {}).then(response => { this.products = response });
+        "filter[categories]": id, page
+      } : filter_attr === 'brand' ? {
+        "filter[brands]": id, page
+      } : {page}).then(response => { this.products = response });
     },
     getCategories() {
-      data.getData("api/v1/categories").then(response => { this.categories = response });
+      data.getData("api/v1/categories").then(response => { this.categories = response; this.allCategories = response.data});
     },
     getBrands() {
-      data.getData("api/v1/brands").then(response => { this.brands = response });
+      data.getData("api/v1/brands").then(response => { this.brands = response; this.allBrands = response.data });
+    },
+    searchForField(field, search){
+      if(field === 'category'){
+       this.categories.data = this.allCategories.filter(category => category.title.toLowerCase().includes(search.toLowerCase()))
+      }else if (field === 'brand'){
+        this.brands.data = this.allBrands.filter(brand => brand.title.toLowerCase().includes(search.toLowerCase()))
+      }
     }
   },
   beforeDestroy() {

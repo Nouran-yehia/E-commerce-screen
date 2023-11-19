@@ -1,8 +1,8 @@
 <template>
   <div class="overlap">
     <div class="frame-38">
-      <div class="frame-39">
-        <div class="title">XS</div>
+      <div class="frame-39" v-for="field in filter">
+        <div class="title">{{ field.name }}</div>
         <img class="icon-close" alt="Icon close" src="../../../../static/img/icon-close-6.svg" />
       </div>
     </div>
@@ -22,6 +22,10 @@ export default {
     total : {
       type: Number,
       default: {}
+    },
+    filter:{
+      type: Array,
+      default: []
     }
   },
 };

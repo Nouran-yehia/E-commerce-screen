@@ -1,9 +1,9 @@
 <template>
-  <div class="pagination">
+  <div class="pagination" v-if="products.length">
     <div class="icon-color-wrapper">
       <img class="icon-color" alt="Icon color" src="../../../../static/img/icon-color-1.svg" />
     </div>
-    <button class="button" v-for="index in pagination.last_page">
+    <button class="button" v-for="index in pagination.last_page" @click="onClick(index)">
       <div class="overlap-group-9" v-if = "pagination.current_page == index" >
         <div class="text-wrapper-24">{{ index }}</div>
       </div>
@@ -16,7 +16,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "Pagination",
@@ -24,6 +23,26 @@ export default {
     pagination : {
       type: Object,
       default: {}
+    },
+    products: {
+      type: Array,
+      default: []
+    },
+    filter: {
+      type: Array,
+      default: ()=>([])
+    },
+    getProducts: {
+      type: Function
+    }
+  },
+  methods: {
+    onClick(page){
+      if(this.filter.length){
+        this.getProducts(this.filter[0].attr, this.filter[0].id, this.filter[0].name, page)
+      }else{
+        this.getProducts(null,null,null,page)
+      }
     }
   }
 };
@@ -65,6 +84,7 @@ export default {
   height: 40px;
   position: relative;
   width: 42px;
+  cursor: pointer;
 }
 
 .pagination .overlap-group-9 {

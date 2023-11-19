@@ -1,6 +1,6 @@
 <template>
   <div class="namecandidate-name-frame-score-1000-1">
-    <ProductList :products="products"/>
+    <ProductList :products="products" :filter="filter" :getProducts="getProducts"/>
   </div>
 </template>
 <script>
@@ -14,6 +14,13 @@ export default {
     products : {
       type: Object,
       default: {}
+    },
+    filter : {
+      type: Array,
+      default: []
+    },
+    getProducts: {
+      type: Function
     }
   }
 };

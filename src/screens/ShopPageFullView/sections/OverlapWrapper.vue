@@ -2,7 +2,7 @@
   <div class="overlap-wrapper">
     <div class="overlap-32">
       <div class="group-4">
-        <div class="overlap-group-8">
+        <div class="overlap-group-8" @click="getProducts()">
           <div class="text-wrapper-23">Hide Filters</div>
         </div>
       </div>
@@ -14,6 +14,11 @@
 <script>
 export default {
   name: "OverlapWrapper",
+  props: {
+    getProducts: {
+      type: Function
+    }
+  }
 };
 </script>
 
@@ -47,6 +52,7 @@ export default {
   height: 32px;
   position: relative;
   width: 157px;
+  cursor: pointer;
 }
 
 .overlap-wrapper .text-wrapper-23 {

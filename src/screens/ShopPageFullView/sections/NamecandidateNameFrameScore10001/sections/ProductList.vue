@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <Pagination v-if="products.data" :pagination="products.pagination"/>
+    <Pagination v-if="products.data" :products="products.data" :pagination="products.pagination" :filter="filter" :getProducts="getProducts"/>
   </div>
 </template>
 <script>
@@ -33,8 +33,15 @@ export default {
     products: {
       type: Object,
       default: {}
+    },
+    filter : {
+      type: Array,
+      default: ()=>{[]}
+    },
+    getProducts: {
+      type: Function
     }
-  },
+  }
 };
 </script>
 

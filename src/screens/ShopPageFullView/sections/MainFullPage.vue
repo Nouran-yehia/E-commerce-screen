@@ -2,11 +2,11 @@
   <div class="shop-page-full-view">
     <div class="div-11">
       <Group />
-      <Overlap v-if="products.pagination" :total="products.pagination.total"/>
+      <Overlap v-if="products.pagination" :total="products.pagination.total" :filter="filter"/>
       <div class="text-wrapper-26">Dining Room Tables</div>
-      <ProductListing :products="products" />
-      <OverlapWrapper />
-      <SideSection :categories="categories" :brands="brands"/>
+      <ProductListing :products="products" :filter="filter" :getProducts="getProducts"/>
+      <OverlapWrapper :getProducts="getProducts"/>
+      <SideSection :categories="categories" :brands="brands" :getProducts="getProducts" :searchForField="searchForField" />
     </div>
   </div>
 </template>
@@ -37,6 +37,16 @@ export default {
     brands : {
       type: Object,
       default: {}
+    },
+    getProducts: {
+      type: Function
+    },
+    searchForField: {
+      type: Function
+    },
+    filter:{
+      type: Array,
+      default: []
     }
   },
 };

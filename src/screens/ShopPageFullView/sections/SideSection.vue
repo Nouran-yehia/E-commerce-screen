@@ -1,20 +1,16 @@
 <template>
   <div class="namecandidate-name-frame-score-1000-2">
-    <Frame :categories="categories"/>
+    <Frame :categories="categories" :brands="brands" :getProducts="this.getProducts" :searchForField="searchForField"/>
     <img class="line-3" alt="Line" src="../../../../static/img/line-13.svg" />
-    <FrameWrapper :brands="brands" />
-    <img class="line-4" alt="Line" src="../../../../static/img/line-13.svg" />
   </div>
 </template>
 <script>
 import Frame from "./NamecandidateNameFrameScore10002/sections/Frame.vue";
-import FrameWrapper from "./NamecandidateNameFrameScore10002/sections/FrameWrapper.vue";
 
 export default {
   name: "SideSection",
   components: {
-    Frame,
-    FrameWrapper,
+    Frame
   },
   props: {
     categories : {
@@ -24,6 +20,16 @@ export default {
     brands : {
       type: Object,
       default: {}
+    },
+    getProducts: {
+      type: Function
+    },
+    filter:{
+      type: Array,
+      default: ()=>([])
+    },
+    searchForField:{
+      type: Function
     }
   },
 };
